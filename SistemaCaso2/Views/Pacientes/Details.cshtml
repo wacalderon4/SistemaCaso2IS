@@ -1,0 +1,78 @@
+﻿@model SistemaCaso2.Models.Paciente
+
+@{
+    ViewBag.Title = "Datos";
+}
+
+<h2>Datos del Paciente</h2>
+
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatura)
+        </dd>
+        <dt>
+            @Html.DisplayFor(model => model.Registros)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    @foreach (var item in Model.Registros)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Enfermedad.nombreEnfermedad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Enfermedad.sintoma)
+                        </td>
+                    </tr>
+                    }
+
+                </table>
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -1,0 +1,65 @@
+﻿@model SistemaCaso2.Models.Paciente
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar Registros</h2>
+
+<h3>El item seleccionado se eliminará permanentemente</h3>
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatura)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <br />
+            @Html.ActionLink("Resúmen Pacientes", "Index")
+        </div>
+    }
+</div>
