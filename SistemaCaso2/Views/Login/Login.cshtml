@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- vinculo a bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Temas-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- se vincula al hoja de estilo para definir el aspecto del formulario de login-->
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+
+<body>
+    <div id="Contenedor">
+        <div class="Icon">
+            <div class="container">
+                <h1> Iniciar Sesión</h1>
+                <br />
+                <h4> Sistema citas médicas, ingreso administrador </h4>
+                <br />
+                <br />
+            
+
+                <div class="danger text-warning">
+                    @ViewBag.Error
+                </div>
+           
+                <form action="@Url.Content("~/Login/Login")" method="post">
+                    <br />
+                    <br />
+                    <br />
+                    <div class="input-group input-group-lg ">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"> </i> </span>
+                        <input type="text" class="form-control" name="User" placeholder="Usuario" id="Usuario" aria-describedby="sizing-addon1" required>
+                    </div>
+                    <br>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" name="Pass" class="form-control" placeholder="******" aria-describedby="sizing-addon1" required>
+                    </div>
+                    <br />
+
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" id="IngresoLog" type="submit">Entrar</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
+
+
